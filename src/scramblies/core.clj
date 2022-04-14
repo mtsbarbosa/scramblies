@@ -7,6 +7,7 @@
   []
   {::http/routes r.core/all-routes
    ::http/type   :jetty
+   ::http/allowed-origins {:creds true :allowed-origins ["http://localhost:3000"]}
    ::http/port   (Integer/parseInt (env :port))})
 
 (defn create-server []
